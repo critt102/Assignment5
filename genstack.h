@@ -1,22 +1,48 @@
 #include <iostream>
 using namespace std;
 
+template <class T>
 class GenStack
 {
   public:
-    GenStack(); //constructor
-    GenStack(int maxSize); //overloaded constructor
-    ~GenStack(); //destructor
-
-    void push(char d);
-    char pop();
-    char peek();
-
-    bool isFull();
-    bool isEmpty();
-
     int size;
     int top;
+    T *myArray;
 
-    char *myArray;
+    GenStack(){
+      myArray=new T[10];
+      size=10;
+      top =-1;
+    }
+
+    GenStack(int maxSize){
+      myArray=new T[maxSize];
+      size=maxSize;
+      top=-1;
+    }
+
+    ~GenStack(){
+      delete myArray;
+    }
+
+    void push(T d){
+      //need to check error/boundry check
+      //this is your job
+      myArray[++top]=d;
+    }
+    T pop(){
+      //error checking, make sure it's not isEmpty
+      //return and remove
+      return myArray[top--];
+    }
+    T peek(){
+      //check if empty
+      return myArray[top];
+    }
+    bool isFull(){
+      return (top==size-1);
+    }
+    bool isEmpty(){
+      return (top==-1);
+    }
 };

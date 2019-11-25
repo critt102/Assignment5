@@ -17,6 +17,24 @@ class BST{
       //research
     }
 
+    bool isEmpty(){
+      if(root==NULL){
+        return true;
+      }
+      else{
+        return false;
+      }
+    }
+
+    bool isRoot(TreeNode<T>* node){
+      if(node==root){
+        return true;
+      }
+      else{
+        return false;
+      }
+    }
+
     void recPrint(TreeNode<T>* node){
       if(node!=NULL){
         recPrint(node->left);

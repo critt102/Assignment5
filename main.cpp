@@ -3,13 +3,14 @@
 using namespace std;
 
 int main(int argc, char**argv){
-  BST<Student> bb;
-  Student* one=new Student(500, "Ally", "Junior", "English", 3.8, 12345);
-  Student* two=new Student(2010, "Katie", "Freshman", "Film", 2.7, 12345);
-  Student* three=new Student(60012, "Katie", "Freshman", "Film", 4.0, 98765);
-  bb.insert(*one);
-  bb.insert(*two);
-  bb.insert(*three);
+
+  //BST<Student> bb;
+  // Student* one=new Student(500, "Ally", "Junior", "English", 3.8, 12345);
+  // Student* two=new Student(2010, "Katie", "Freshman", "Film", 2.7, 12345);
+  // Student* three=new Student(60012, "Katie", "Freshman", "Film", 4.0, 98765);
+  // bb.insert(*one);
+  // bb.insert(*two);
+  // bb.insert(*three);
   //bb.printTree();
 
   //cout<<bb.getMax()->key<<endl;
@@ -19,7 +20,7 @@ int main(int argc, char**argv){
   // else
   //   cout<<"FALSE"<<endl;
 
-  // Database directory;
+  Database directory;
   // directory.print();
 
   // bb.deleteNode(*one);

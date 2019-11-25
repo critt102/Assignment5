@@ -26,6 +26,14 @@ public:
     ids=new DLinkedList<int>();
   }
 
+  Faculty(int m_id, string m_name, string m_level, string m_depart){
+    faculty_id=m_id;
+    name=m_name;
+    level=m_level;
+    depart=m_depart;
+    ids=new DLinkedList<int>();
+  }
+
   Faculty(int m_id, string m_name, string m_level, string m_depart, DLinkedList<int>* m_ids){
     faculty_id=m_id;
     name=m_name;
