@@ -1,4 +1,5 @@
 #include <iostream>
+#include <typeinfo>
 #include "dlinkedlist.h"
 using namespace std;
 
@@ -65,20 +66,34 @@ public:
 
 
 ostream& operator<<(ostream& os, const Faculty faculty_b) {
-		os << "Faculty ID: " << faculty_b.faculty_id << endl;
-		os << "Faculty Name: " << faculty_b.name << endl;
-		os << "Faculty Year: " << faculty_b.level << endl;
-		os << "Faculty Department: " << faculty_b.depart << endl;
-		os << "Faculty Advisees: ";
-    if(faculty_b.ids != NULL){
-			ListNode<int>* temp = faculty_b.ids->front;
-			while (temp != NULL) {
-				os << temp->data << ", ";
-				temp = temp->next;
-			}
-			//temp = NULL;
-		}
+  if (typeid(os) == typeid(ofstream)){
     os<<endl;
-
-    return os;
+    os << faculty_b.faculty_id << endl;
+    os << faculty_b.name << endl;
+    os << faculty_b.level << endl;
+    os << faculty_b.depart << endl;
+    if(faculty_b.ids != NULL){
+      ListNode<int>* temp = faculty_b.ids->front;
+      while (temp != NULL) {
+        os << temp->data << " ";
+        temp = temp->next;
+      }
+    }
+  }
+  else{
+    os << "Faculty ID: " << faculty_b.faculty_id << endl;
+    os << "Faculty Name: " << faculty_b.name << endl;
+    os << "Faculty Year: " << faculty_b.level << endl;
+    os << "Faculty Department: " << faculty_b.depart << endl;
+    os << "Faculty Advisees: ";
+    if(faculty_b.ids != NULL){
+      ListNode<int>* temp = faculty_b.ids->front;
+      while (temp != NULL) {
+        os << temp->data << " ";
+        temp = temp->next;
+      }
+    }
+    os<<endl;
+  }
+  return os;
 }

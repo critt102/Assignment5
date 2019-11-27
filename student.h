@@ -1,4 +1,5 @@
 #include <iostream>
+#include <typeinfo>
 using namespace std;
 
 class Student{
@@ -57,11 +58,22 @@ public:
   //overload equality, less than, greater than operations
 };
 ostream& operator<<(ostream& os, const Student student_b) {
-		os << "Student ID: " << student_b.student_id << endl;
+  if (typeid(os) == typeid(ofstream)){
+    os<<endl;
+    os << student_b.student_id << endl;
+		os << student_b.name << endl;
+		os << student_b.level << endl;
+		os << student_b.major << endl;
+		os << student_b.gpa << endl;
+		os << student_b.advisor;
+  }
+  else{
+    os << "Student ID: " << student_b.student_id << endl;
 		os << "Student Name: " << student_b.name << endl;
 		os << "Student Year: " << student_b.level << endl;
 		os << "Student Major: " << student_b.major << endl;
 		os << "Student GPA: " << student_b.gpa << endl;
 		os << "Student Advisor's ID: " << student_b.advisor << endl;
-    return os;
+  }
+  return os;
 }
