@@ -4,7 +4,7 @@
  *2278514
  *critt102@mail.chapman.edu
  *CPSC 350-01
- *Assignment 4
+ *Assignment 5
  */
 #include <iostream>
 #include "listnode.h"

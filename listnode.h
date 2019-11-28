@@ -4,13 +4,13 @@
  *2278514
  *critt102@mail.chapman.edu
  *CPSC 350-01
- *Assignment 4
+ *Assignment 5
  */
 #include <iostream>
 using namespace std;
 
 /**
- * ListNode class creates and defines Nodes to be used in DLinkedList and LLqueue
+ * ListNode class creates and defines Nodes to be used in DLinkedList
  */
 template <class T>
 class ListNode{
